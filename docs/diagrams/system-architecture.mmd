@@ -1,0 +1,19 @@
+flowchart LR
+  UI[Next.js Frontend]\nDashboard/Chat/Reports --> API[FastAPI Backend]
+  API --> AUTH[Auth + JWT + RBAC]
+  API --> SUP[LangGraph Supervisor]
+  SUP --> OCR[OCR Agent\nGLM OCR + PaddleOCR]
+  SUP --> ENT[Medical Entity Agent]
+  SUP --> RET[Retrieval Agent]
+  SUP --> QA[Medical QA Agent]
+  SUP --> SUM[Summarization Agent]
+  SUP --> TIM[Timeline Agent]
+  SUP --> REP[Report Agent]
+  API --> PG[(PostgreSQL + pgvector)]
+  API --> FS[(Encrypted Local Storage)]
+  RET --> PG
+  ENT --> PG
+  TIM --> PG
+  REP --> PG
+  API --> OLLAMA[Local Ollama Models]
+  API --> OBS[OTel + Prometheus + Grafana + Loki]

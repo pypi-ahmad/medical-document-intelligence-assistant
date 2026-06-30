@@ -1,0 +1,5107 @@
+{
+  "run_id": "1782815184",
+  "generated_files": [
+    "/tmp/mdia_live_verify_1782815184/prescription_sample.pdf",
+    "/tmp/mdia_live_verify_1782815184/lab_report_sample.pdf",
+    "/tmp/mdia_live_verify_1782815184/scanned_referral_sample.png",
+    "/tmp/mdia_live_verify_1782815184/handwritten_note_sample.png"
+  ],
+  "docs": {
+    "prescription": {
+      "upload": {
+        "id": "edfc9145449e43e2bde7834e988f5a61",
+        "filename": "986c9fac7afd468e9a94bfde3dca4baf.pdf",
+        "original_filename": "prescription_sample.pdf",
+        "file_type": "pdf",
+        "file_size": 1207,
+        "page_count": null,
+        "status": "uploaded",
+        "created_at": "2026-06-30T10:26:25"
+      },
+      "process": {
+        "document_id": "edfc9145449e43e2bde7834e988f5a61",
+        "status": "completed",
+        "routed_models": [
+          {
+            "task": "ocr",
+            "selected_model": "glm-ocr:latest",
+            "candidates": [
+              "glm-ocr:latest",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "entity_extraction",
+            "selected_model": "granite4.1:3b",
+            "candidates": [
+              "granite4.1:3b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "timeline",
+            "selected_model": "qwen3.5:2b",
+            "candidates": [
+              "qwen3.5:2b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "embedding",
+            "selected_model": "qwen3-embedding:4b",
+            "candidates": [
+              "qwen3-embedding:4b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "qa",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "summary",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "report",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          }
+        ],
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "City Care Medical Center\nPrescription\nPatient Name: Ahmad Khan\nPatient ID: MRN-88421\nAge: 34\nSex: Male\nVisit Date: 2026-06-21\nDoctor: Dr. Sarah Lee\nDiagnosis: Type 2 diabetes mellitus\nAllergy: Penicillin\n\nMedications:\nStarted Metformin 500 mg bid\nStarted Atorvastatin 20 mg daily\nAspirin 75 mg once daily\n\nFollow-up Date: 2026-07-05",
+            "confidence": null,
+            "layout_json": {
+              "blocks": [
+                {
+                  "text": "City Care Medical Center\nPrescription\nPatient Name: Ahmad Khan\nPatient ID: MRN-88421\nAge: 34\nSex: Male\nVisit Date: 2026-06-21\nDoctor: Dr. Sarah Lee\nDiagnosis: Type 2 diabetes mellitus\nAllergy: Penicillin",
+                  "bbox": [
+                    40.0,
+                    40.0000114440918,
+                    213.00796508789062,
+                    193.46649169921875
+                  ],
+                  "confidence": null,
+                  "label": ""
+                },
+                {
+                  "text": "Medications:\nStarted Metformin 500 mg bid\nStarted Atorvastatin 20 mg daily\nAspirin 75 mg once daily",
+                  "bbox": [
+                    40.0,
+                    209.0974884033203,
+                    195.90296936035156,
+                    270.32904052734375
+                  ],
+                  "confidence": null,
+                  "label": ""
+                },
+                {
+                  "text": "Follow-up Date: 2026-07-05",
+                  "bbox": [
+                    40.0,
+                    285.96002197265625,
+                    176.33396911621094,
+                    301.07403564453125
+                  ],
+                  "confidence": null,
+                  "label": ""
+                }
+              ],
+              "tables": []
+            }
+          }
+        ],
+        "entities": [
+          {
+            "entity_type": "patient_name",
+            "raw_value": "Ahmad Khan",
+            "normalized_value": "Ahmad Khan",
+            "attributes": {
+              "field": "patient_name"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "patient_id",
+            "raw_value": "MRN-88421",
+            "normalized_value": "MRN-88421",
+            "attributes": {
+              "field": "patient_id"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "patient_age",
+            "raw_value": "34",
+            "normalized_value": "34",
+            "attributes": {
+              "field": "patient_age"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "patient_sex",
+            "raw_value": "Male",
+            "normalized_value": "Male",
+            "attributes": {
+              "field": "patient_sex"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "visit date: 2026-06-21",
+            "normalized_value": "2026-06-21",
+            "attributes": {
+              "label": "visit date"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "diagnosis_mentioned",
+            "raw_value": "Type 2 diabetes mellitus",
+            "normalized_value": "type 2 diabetes mellitus",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "Penicillin",
+            "normalized_value": "penicillin",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "healthcare_provider",
+            "raw_value": "Dr. Sarah Lee",
+            "normalized_value": "Dr. Sarah Lee",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Metformin 500 mg bid",
+            "normalized_value": "metformin",
+            "attributes": {
+              "dosage": "500 mg",
+              "frequency": "bid",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Atorvastatin 20 mg daily",
+            "normalized_value": "atorvastatin",
+            "attributes": {
+              "dosage": "20 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Aspirin 75 mg once",
+            "normalized_value": "aspirin",
+            "attributes": {
+              "dosage": "75 mg",
+              "frequency": "once",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          }
+        ],
+        "labs": [],
+        "medications": [
+          {
+            "medication_name": "Metformin",
+            "dosage": "500 mg",
+            "frequency": "bid",
+            "action": "started",
+            "start_date": "2026-06-21",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Atorvastatin",
+            "dosage": "20 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-21",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Aspirin",
+            "dosage": "75 mg",
+            "frequency": "once",
+            "action": "started",
+            "start_date": "2026-06-21",
+            "end_date": null,
+            "page_number": 1
+          }
+        ],
+        "timeline_events": [
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-21",
+            "title": "Visit Date documented",
+            "description": "Visit Date: 2026-06-21",
+            "metadata": {
+              "label": "visit date"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "document_date",
+            "event_date": "2026-06-21",
+            "title": "Document date detected (2026-06-21)",
+            "description": "Date extracted from OCR text",
+            "metadata": {},
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "document_date",
+            "event_date": "2026-07-05",
+            "title": "Document date detected (2026-07-05)",
+            "description": "Date extracted from OCR text",
+            "metadata": {},
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "diagnosis_mention",
+            "event_date": "2026-06-21",
+            "title": "Diagnosis mentioned",
+            "description": "Type 2 diabetes mellitus",
+            "metadata": {
+              "diagnosis": "Type 2 diabetes mellitus"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "medication_change",
+            "event_date": "2026-06-21",
+            "title": "Medication started: Metformin",
+            "description": "500 mg bid",
+            "metadata": {
+              "medication_name": "Metformin",
+              "dosage": "500 mg",
+              "frequency": "bid",
+              "action": "started",
+              "start_date": "2026-06-21",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Metformin 500 mg bid"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "medication_change",
+            "event_date": "2026-06-21",
+            "title": "Medication started: Atorvastatin",
+            "description": "20 mg daily",
+            "metadata": {
+              "medication_name": "Atorvastatin",
+              "dosage": "20 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-21",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Atorvastatin 20 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "edfc9145449e43e2bde7834e988f5a61",
+            "event_type": "medication_change",
+            "event_date": "2026-06-21",
+            "title": "Medication started: Aspirin",
+            "description": "75 mg once",
+            "metadata": {
+              "medication_name": "Aspirin",
+              "dosage": "75 mg",
+              "frequency": "once",
+              "action": "started",
+              "start_date": "2026-06-21",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Aspirin 75 mg once"
+            },
+            "page_number": 1
+          }
+        ],
+        "indexed_chunks": 1,
+        "safety": {
+          "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+          "educational_use_only": true,
+          "prohibited_actions": [
+            "No diagnosis",
+            "No treatment recommendation",
+            "No medication prescribing",
+            "Not a substitute for licensed clinicians"
+          ]
+        }
+      },
+      "ocr": [
+        {
+          "page_number": 1,
+          "text": "City Care Medical Center\nPrescription\nPatient Name: Ahmad Khan\nPatient ID: MRN-88421\nAge: 34\nSex: Male\nVisit Date: 2026-06-21\nDoctor: Dr. Sarah Lee\nDiagnosis: Type 2 diabetes mellitus\nAllergy: Penicillin\n\nMedications:\nStarted Metformin 500 mg bid\nStarted Atorvastatin 20 mg daily\nAspirin 75 mg once daily\n\nFollow-up Date: 2026-07-05",
+          "confidence": null,
+          "layout_json": {
+            "blocks": [
+              {
+                "text": "City Care Medical Center\nPrescription\nPatient Name: Ahmad Khan\nPatient ID: MRN-88421\nAge: 34\nSex: Male\nVisit Date: 2026-06-21\nDoctor: Dr. Sarah Lee\nDiagnosis: Type 2 diabetes mellitus\nAllergy: Penicillin",
+                "bbox": [
+                  40.0,
+                  40.0000114440918,
+                  213.00796508789062,
+                  193.46649169921875
+                ],
+                "confidence": null,
+                "label": ""
+              },
+              {
+                "text": "Medications:\nStarted Metformin 500 mg bid\nStarted Atorvastatin 20 mg daily\nAspirin 75 mg once daily",
+                "bbox": [
+                  40.0,
+                  209.0974884033203,
+                  195.90296936035156,
+                  270.32904052734375
+                ],
+                "confidence": null,
+                "label": ""
+              },
+              {
+                "text": "Follow-up Date: 2026-07-05",
+                "bbox": [
+                  40.0,
+                  285.96002197265625,
+                  176.33396911621094,
+                  301.07403564453125
+                ],
+                "confidence": null,
+                "label": ""
+              }
+            ],
+            "tables": []
+          },
+          "provider": "dual-path"
+        }
+      ],
+      "entities": [
+        {
+          "id": 716,
+          "entity_type": "allergy",
+          "raw_value": "Penicillin",
+          "normalized_value": "penicillin",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 715,
+          "entity_type": "diagnosis_mentioned",
+          "raw_value": "Type 2 diabetes mellitus",
+          "normalized_value": "type 2 diabetes mellitus",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 717,
+          "entity_type": "healthcare_provider",
+          "raw_value": "Dr. Sarah Lee",
+          "normalized_value": "Dr. Sarah Lee",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 718,
+          "entity_type": "medication",
+          "raw_value": "Metformin 500 mg bid",
+          "normalized_value": "metformin",
+          "attributes": {
+            "dosage": "500 mg",
+            "frequency": "bid",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 719,
+          "entity_type": "medication",
+          "raw_value": "Atorvastatin 20 mg daily",
+          "normalized_value": "atorvastatin",
+          "attributes": {
+            "dosage": "20 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 720,
+          "entity_type": "medication",
+          "raw_value": "Aspirin 75 mg once",
+          "normalized_value": "aspirin",
+          "attributes": {
+            "dosage": "75 mg",
+            "frequency": "once",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 712,
+          "entity_type": "patient_age",
+          "raw_value": "34",
+          "normalized_value": "34",
+          "attributes": {
+            "field": "patient_age"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 711,
+          "entity_type": "patient_id",
+          "raw_value": "MRN-88421",
+          "normalized_value": "MRN-88421",
+          "attributes": {
+            "field": "patient_id"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 710,
+          "entity_type": "patient_name",
+          "raw_value": "Ahmad Khan",
+          "normalized_value": "Ahmad Khan",
+          "attributes": {
+            "field": "patient_name"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 713,
+          "entity_type": "patient_sex",
+          "raw_value": "Male",
+          "normalized_value": "Male",
+          "attributes": {
+            "field": "patient_sex"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 714,
+          "entity_type": "visit_date",
+          "raw_value": "visit date: 2026-06-21",
+          "normalized_value": "2026-06-21",
+          "attributes": {
+            "label": "visit date"
+          },
+          "page_number": 1,
+          "confidence": null
+        }
+      ],
+      "medications": [
+        {
+          "medication_name": "Metformin",
+          "dosage": "500 mg",
+          "frequency": "bid",
+          "action": "started",
+          "start_date": "2026-06-21",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Atorvastatin",
+          "dosage": "20 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-21",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Aspirin",
+          "dosage": "75 mg",
+          "frequency": "once",
+          "action": "started",
+          "start_date": "2026-06-21",
+          "end_date": null,
+          "page_number": 1
+        }
+      ],
+      "labs": []
+    },
+    "lab_report": {
+      "upload": {
+        "id": "6f67d3d746a942789e3f0fd879333094",
+        "filename": "d3263eb4cd67462193a522184addee3b.pdf",
+        "original_filename": "lab_report_sample.pdf",
+        "file_type": "pdf",
+        "file_size": 1128,
+        "page_count": null,
+        "status": "uploaded",
+        "created_at": "2026-06-30T10:26:25"
+      },
+      "process": {
+        "document_id": "6f67d3d746a942789e3f0fd879333094",
+        "status": "completed",
+        "routed_models": [
+          {
+            "task": "ocr",
+            "selected_model": "glm-ocr:latest",
+            "candidates": [
+              "glm-ocr:latest",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "entity_extraction",
+            "selected_model": "granite4.1:3b",
+            "candidates": [
+              "granite4.1:3b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "timeline",
+            "selected_model": "qwen3.5:2b",
+            "candidates": [
+              "qwen3.5:2b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "embedding",
+            "selected_model": "qwen3-embedding:4b",
+            "candidates": [
+              "qwen3-embedding:4b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "qa",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "summary",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "report",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          }
+        ],
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "City Care Medical Center\nLaboratory Report\nPatient Name: Ahmad Khan\nDate of Service: 2026-06-25\n\nHemoglobin: 10.8 g/dL (13.0-17.0)\nWBC: 12.2 K/uL (4.0-11.0)\nCreatinine: 1.4 mg/dL (0.7-1.3)\nGlucose: 168 mg/dL (70-99)\nSodium: 138 mmol/L (135-145)\nPotassium: 4.6 mmol/L (3.5-5.1)\n---\n---",
+            "confidence": null,
+            "layout_json": {
+              "blocks": [
+                {
+                  "text": "City Care Medical Center\nLaboratory Report\nPatient Name: Ahmad Khan\nDate of Service: 2026-06-25",
+                  "bbox": [
+                    40.0,
+                    40.0000114440918,
+                    177.5659637451172,
+                    101.23150634765625
+                  ],
+                  "confidence": null,
+                  "label": ""
+                },
+                {
+                  "text": "Hemoglobin: 10.8 g/dL (13.0-17.0)\nWBC: 12.2 K/uL (4.0-11.0)\nCreatinine: 1.4 mg/dL (0.7-1.3)\nGlucose: 168 mg/dL (70-99)\nSodium: 138 mmol/L (135-145)\nPotassium: 4.6 mmol/L (3.5-5.1)",
+                  "bbox": [
+                    40.0,
+                    116.86250305175781,
+                    207.52993774414062,
+                    208.8389892578125
+                  ],
+                  "confidence": null,
+                  "label": ""
+                }
+              ],
+              "tables": []
+            }
+          }
+        ],
+        "entities": [
+          {
+            "entity_type": "patient_name",
+            "raw_value": "Ahmad Khan",
+            "normalized_value": "Ahmad Khan",
+            "attributes": {
+              "field": "patient_name"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of service: 2026-06-25",
+            "normalized_value": "2026-06-25",
+            "attributes": {
+              "label": "date of service"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "laboratory_value",
+            "raw_value": "Hemoglobin: 10.8 g/dL (13.0-17.0)",
+            "normalized_value": "hemoglobin",
+            "attributes": {
+              "value": "10.8",
+              "unit": "g/dL",
+              "reference_range": "13.0-17.0",
+              "is_out_of_range": true
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "laboratory_value",
+            "raw_value": "WBC: 12.2 K/uL (4.0-11.0)",
+            "normalized_value": "white blood cell count",
+            "attributes": {
+              "value": "12.2",
+              "unit": "K/uL",
+              "reference_range": "4.0-11.0",
+              "is_out_of_range": true
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "laboratory_value",
+            "raw_value": "Creatinine: 1.4 mg/dL (0.7-1.3)",
+            "normalized_value": "creatinine",
+            "attributes": {
+              "value": "1.4",
+              "unit": "mg/dL",
+              "reference_range": "0.7-1.3",
+              "is_out_of_range": true
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "laboratory_value",
+            "raw_value": "Glucose: 168 mg/dL (70-99)",
+            "normalized_value": "glucose",
+            "attributes": {
+              "value": "168",
+              "unit": "mg/dL",
+              "reference_range": "70-99",
+              "is_out_of_range": true
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "laboratory_value",
+            "raw_value": "Sodium: 138 mmol/L (135-145)",
+            "normalized_value": "sodium",
+            "attributes": {
+              "value": "138",
+              "unit": "mmol/L",
+              "reference_range": "135-145",
+              "is_out_of_range": false
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "laboratory_value",
+            "raw_value": "Potassium: 4.6 mmol/L (3.5-5.1)",
+            "normalized_value": "potassium",
+            "attributes": {
+              "value": "4.6",
+              "unit": "mmol/L",
+              "reference_range": "3.5-5.1",
+              "is_out_of_range": false
+            },
+            "page_number": 1,
+            "confidence": null
+          }
+        ],
+        "labs": [
+          {
+            "test_name": "hemoglobin",
+            "value_text": "10.8",
+            "unit": "g/dL",
+            "reference_range": "13.0-17.0",
+            "is_out_of_range": true,
+            "event_date": "2026-06-25",
+            "page_number": 1
+          },
+          {
+            "test_name": "white blood cell count",
+            "value_text": "12.2",
+            "unit": "K/uL",
+            "reference_range": "4.0-11.0",
+            "is_out_of_range": true,
+            "event_date": "2026-06-25",
+            "page_number": 1
+          },
+          {
+            "test_name": "creatinine",
+            "value_text": "1.4",
+            "unit": "mg/dL",
+            "reference_range": "0.7-1.3",
+            "is_out_of_range": true,
+            "event_date": "2026-06-25",
+            "page_number": 1
+          },
+          {
+            "test_name": "glucose",
+            "value_text": "168",
+            "unit": "mg/dL",
+            "reference_range": "70-99",
+            "is_out_of_range": true,
+            "event_date": "2026-06-25",
+            "page_number": 1
+          },
+          {
+            "test_name": "sodium",
+            "value_text": "138",
+            "unit": "mmol/L",
+            "reference_range": "135-145",
+            "is_out_of_range": false,
+            "event_date": "2026-06-25",
+            "page_number": 1
+          },
+          {
+            "test_name": "potassium",
+            "value_text": "4.6",
+            "unit": "mmol/L",
+            "reference_range": "3.5-5.1",
+            "is_out_of_range": false,
+            "event_date": "2026-06-25",
+            "page_number": 1
+          }
+        ],
+        "medications": [],
+        "timeline_events": [
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-25",
+            "title": "Date Of Service documented",
+            "description": "Date Of Service: 2026-06-25",
+            "metadata": {
+              "label": "date of service"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "document_date",
+            "event_date": "2026-06-25",
+            "title": "Document date detected (2026-06-25)",
+            "description": "Date extracted from OCR text",
+            "metadata": {},
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: hemoglobin",
+            "description": "10.8 g/dL",
+            "metadata": {
+              "test_name": "hemoglobin",
+              "value": "10.8",
+              "unit": "g/dL",
+              "reference_range": "13.0-17.0",
+              "is_out_of_range": true
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: white blood cell count",
+            "description": "12.2 K/uL",
+            "metadata": {
+              "test_name": "white blood cell count",
+              "value": "12.2",
+              "unit": "K/uL",
+              "reference_range": "4.0-11.0",
+              "is_out_of_range": true
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: creatinine",
+            "description": "1.4 mg/dL",
+            "metadata": {
+              "test_name": "creatinine",
+              "value": "1.4",
+              "unit": "mg/dL",
+              "reference_range": "0.7-1.3",
+              "is_out_of_range": true
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: glucose",
+            "description": "168 mg/dL",
+            "metadata": {
+              "test_name": "glucose",
+              "value": "168",
+              "unit": "mg/dL",
+              "reference_range": "70-99",
+              "is_out_of_range": true
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: sodium",
+            "description": "138 mmol/L",
+            "metadata": {
+              "test_name": "sodium",
+              "value": "138",
+              "unit": "mmol/L",
+              "reference_range": "135-145",
+              "is_out_of_range": false
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "6f67d3d746a942789e3f0fd879333094",
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: potassium",
+            "description": "4.6 mmol/L",
+            "metadata": {
+              "test_name": "potassium",
+              "value": "4.6",
+              "unit": "mmol/L",
+              "reference_range": "3.5-5.1",
+              "is_out_of_range": false
+            },
+            "page_number": 1
+          }
+        ],
+        "indexed_chunks": 1,
+        "safety": {
+          "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+          "educational_use_only": true,
+          "prohibited_actions": [
+            "No diagnosis",
+            "No treatment recommendation",
+            "No medication prescribing",
+            "Not a substitute for licensed clinicians"
+          ]
+        }
+      },
+      "ocr": [
+        {
+          "page_number": 1,
+          "text": "City Care Medical Center\nLaboratory Report\nPatient Name: Ahmad Khan\nDate of Service: 2026-06-25\n\nHemoglobin: 10.8 g/dL (13.0-17.0)\nWBC: 12.2 K/uL (4.0-11.0)\nCreatinine: 1.4 mg/dL (0.7-1.3)\nGlucose: 168 mg/dL (70-99)\nSodium: 138 mmol/L (135-145)\nPotassium: 4.6 mmol/L (3.5-5.1)\n---\n---",
+          "confidence": null,
+          "layout_json": {
+            "blocks": [
+              {
+                "text": "City Care Medical Center\nLaboratory Report\nPatient Name: Ahmad Khan\nDate of Service: 2026-06-25",
+                "bbox": [
+                  40.0,
+                  40.0000114440918,
+                  177.5659637451172,
+                  101.23150634765625
+                ],
+                "confidence": null,
+                "label": ""
+              },
+              {
+                "text": "Hemoglobin: 10.8 g/dL (13.0-17.0)\nWBC: 12.2 K/uL (4.0-11.0)\nCreatinine: 1.4 mg/dL (0.7-1.3)\nGlucose: 168 mg/dL (70-99)\nSodium: 138 mmol/L (135-145)\nPotassium: 4.6 mmol/L (3.5-5.1)",
+                "bbox": [
+                  40.0,
+                  116.86250305175781,
+                  207.52993774414062,
+                  208.8389892578125
+                ],
+                "confidence": null,
+                "label": ""
+              }
+            ],
+            "tables": []
+          },
+          "provider": "dual-path"
+        }
+      ],
+      "entities": [
+        {
+          "id": 723,
+          "entity_type": "laboratory_value",
+          "raw_value": "Hemoglobin: 10.8 g/dL (13.0-17.0)",
+          "normalized_value": "hemoglobin",
+          "attributes": {
+            "value": "10.8",
+            "unit": "g/dL",
+            "reference_range": "13.0-17.0",
+            "is_out_of_range": true
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 724,
+          "entity_type": "laboratory_value",
+          "raw_value": "WBC: 12.2 K/uL (4.0-11.0)",
+          "normalized_value": "white blood cell count",
+          "attributes": {
+            "value": "12.2",
+            "unit": "K/uL",
+            "reference_range": "4.0-11.0",
+            "is_out_of_range": true
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 725,
+          "entity_type": "laboratory_value",
+          "raw_value": "Creatinine: 1.4 mg/dL (0.7-1.3)",
+          "normalized_value": "creatinine",
+          "attributes": {
+            "value": "1.4",
+            "unit": "mg/dL",
+            "reference_range": "0.7-1.3",
+            "is_out_of_range": true
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 726,
+          "entity_type": "laboratory_value",
+          "raw_value": "Glucose: 168 mg/dL (70-99)",
+          "normalized_value": "glucose",
+          "attributes": {
+            "value": "168",
+            "unit": "mg/dL",
+            "reference_range": "70-99",
+            "is_out_of_range": true
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 727,
+          "entity_type": "laboratory_value",
+          "raw_value": "Sodium: 138 mmol/L (135-145)",
+          "normalized_value": "sodium",
+          "attributes": {
+            "value": "138",
+            "unit": "mmol/L",
+            "reference_range": "135-145",
+            "is_out_of_range": false
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 728,
+          "entity_type": "laboratory_value",
+          "raw_value": "Potassium: 4.6 mmol/L (3.5-5.1)",
+          "normalized_value": "potassium",
+          "attributes": {
+            "value": "4.6",
+            "unit": "mmol/L",
+            "reference_range": "3.5-5.1",
+            "is_out_of_range": false
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 721,
+          "entity_type": "patient_name",
+          "raw_value": "Ahmad Khan",
+          "normalized_value": "Ahmad Khan",
+          "attributes": {
+            "field": "patient_name"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 722,
+          "entity_type": "visit_date",
+          "raw_value": "date of service: 2026-06-25",
+          "normalized_value": "2026-06-25",
+          "attributes": {
+            "label": "date of service"
+          },
+          "page_number": 1,
+          "confidence": null
+        }
+      ],
+      "medications": [],
+      "labs": [
+        {
+          "test_name": "hemoglobin",
+          "value_text": "10.8",
+          "unit": "g/dL",
+          "reference_range": "13.0-17.0",
+          "is_out_of_range": true,
+          "event_date": "2026-06-25",
+          "page_number": 1
+        },
+        {
+          "test_name": "white blood cell count",
+          "value_text": "12.2",
+          "unit": "K/uL",
+          "reference_range": "4.0-11.0",
+          "is_out_of_range": true,
+          "event_date": "2026-06-25",
+          "page_number": 1
+        },
+        {
+          "test_name": "creatinine",
+          "value_text": "1.4",
+          "unit": "mg/dL",
+          "reference_range": "0.7-1.3",
+          "is_out_of_range": true,
+          "event_date": "2026-06-25",
+          "page_number": 1
+        },
+        {
+          "test_name": "glucose",
+          "value_text": "168",
+          "unit": "mg/dL",
+          "reference_range": "70-99",
+          "is_out_of_range": true,
+          "event_date": "2026-06-25",
+          "page_number": 1
+        },
+        {
+          "test_name": "sodium",
+          "value_text": "138",
+          "unit": "mmol/L",
+          "reference_range": "135-145",
+          "is_out_of_range": false,
+          "event_date": "2026-06-25",
+          "page_number": 1
+        },
+        {
+          "test_name": "potassium",
+          "value_text": "4.6",
+          "unit": "mmol/L",
+          "reference_range": "3.5-5.1",
+          "is_out_of_range": false,
+          "event_date": "2026-06-25",
+          "page_number": 1
+        }
+      ]
+    },
+    "scanned_document": {
+      "upload": {
+        "id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+        "filename": "4007926df298442692264e217533c47a.png",
+        "original_filename": "scanned_referral_sample.png",
+        "file_type": "png",
+        "file_size": 49708,
+        "page_count": null,
+        "status": "uploaded",
+        "created_at": "2026-06-30T10:26:25"
+      },
+      "process": {
+        "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+        "status": "completed",
+        "routed_models": [
+          {
+            "task": "ocr",
+            "selected_model": "glm-ocr:latest",
+            "candidates": [
+              "glm-ocr:latest",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "entity_extraction",
+            "selected_model": "granite4.1:3b",
+            "candidates": [
+              "granite4.1:3b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "timeline",
+            "selected_model": "qwen3.5:2b",
+            "candidates": [
+              "qwen3.5:2b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "embedding",
+            "selected_model": "qwen3-embedding:4b",
+            "candidates": [
+              "qwen3-embedding:4b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "qa",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "summary",
+            "selected_model": "phi4-mini:3.8b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "report",
+            "selected_model": "phi4-mini:3.8b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          }
+        ],
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "Referral Letter\n\nDate of Visit: 2026-06-24\n\nPatient Name: Ahmad Khan\n\nHospital: City Care Hospital\n\nChief Complaint: persistent cough\n\nProcedure: Chest X-ray\n\nProvider: Dr. Umar Ali",
+            "confidence": null,
+            "layout_json": {
+              "blocks": [],
+              "tables": []
+            }
+          }
+        ],
+        "entities": [
+          {
+            "entity_type": "patient_name",
+            "raw_value": "Ahmad Khan",
+            "normalized_value": "Ahmad Khan",
+            "attributes": {
+              "field": "patient_name"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-24",
+            "normalized_value": "2026-06-24",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "persistent cough",
+            "normalized_value": "persistent cough",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "healthcare_provider",
+            "raw_value": "Dr. Umar Ali",
+            "normalized_value": "Dr. Umar Ali",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "hospital",
+            "raw_value": "City Care Hospital",
+            "normalized_value": "City Care Hospital",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "procedure",
+            "raw_value": "Chest X-ray",
+            "normalized_value": "chest x-ray",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          }
+        ],
+        "labs": [],
+        "medications": [],
+        "timeline_events": [
+          {
+            "id": 0,
+            "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-24",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-24",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+            "event_type": "document_date",
+            "event_date": "2026-06-24",
+            "title": "Document date detected (2026-06-24)",
+            "description": "Date extracted from OCR text",
+            "metadata": {},
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+            "event_type": "procedure",
+            "event_date": "2026-06-24",
+            "title": "Procedure: Chest X-ray",
+            "description": "Chest X-ray",
+            "metadata": {
+              "procedure": "chest x-ray"
+            },
+            "page_number": 1
+          }
+        ],
+        "indexed_chunks": 1,
+        "safety": {
+          "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+          "educational_use_only": true,
+          "prohibited_actions": [
+            "No diagnosis",
+            "No treatment recommendation",
+            "No medication prescribing",
+            "Not a substitute for licensed clinicians"
+          ]
+        }
+      },
+      "ocr": [
+        {
+          "page_number": 1,
+          "text": "Referral Letter\n\nDate of Visit: 2026-06-24\n\nPatient Name: Ahmad Khan\n\nHospital: City Care Hospital\n\nChief Complaint: persistent cough\n\nProcedure: Chest X-ray\n\nProvider: Dr. Umar Ali",
+          "confidence": null,
+          "layout_json": {
+            "blocks": [],
+            "tables": []
+          },
+          "provider": "dual-path"
+        }
+      ],
+      "entities": [
+        {
+          "id": 732,
+          "entity_type": "healthcare_provider",
+          "raw_value": "Dr. Umar Ali",
+          "normalized_value": "Dr. Umar Ali",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 733,
+          "entity_type": "hospital",
+          "raw_value": "City Care Hospital",
+          "normalized_value": "City Care Hospital",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 729,
+          "entity_type": "patient_name",
+          "raw_value": "Ahmad Khan",
+          "normalized_value": "Ahmad Khan",
+          "attributes": {
+            "field": "patient_name"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 734,
+          "entity_type": "procedure",
+          "raw_value": "Chest X-ray",
+          "normalized_value": "chest x-ray",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 731,
+          "entity_type": "symptom",
+          "raw_value": "persistent cough",
+          "normalized_value": "persistent cough",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 730,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-24",
+          "normalized_value": "2026-06-24",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        }
+      ],
+      "medications": [],
+      "labs": []
+    },
+    "handwritten_note": {
+      "upload": {
+        "id": "9da32c482d20436cb307dbf3d9e61c49",
+        "filename": "69562cd9987a4898b2f58a23df26f203.png",
+        "original_filename": "handwritten_note_sample.png",
+        "file_type": "png",
+        "file_size": 70240,
+        "page_count": null,
+        "status": "uploaded",
+        "created_at": "2026-06-30T10:26:25"
+      },
+      "process": {
+        "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+        "status": "completed",
+        "routed_models": [
+          {
+            "task": "ocr",
+            "selected_model": "glm-ocr:latest",
+            "candidates": [
+              "glm-ocr:latest",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "entity_extraction",
+            "selected_model": "granite4.1:3b",
+            "candidates": [
+              "granite4.1:3b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "timeline",
+            "selected_model": "qwen3.5:2b",
+            "candidates": [
+              "qwen3.5:2b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "embedding",
+            "selected_model": "qwen3-embedding:4b",
+            "candidates": [
+              "qwen3-embedding:4b",
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "qa",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "qwen3.5:4b",
+              "phi4-mini:3.8b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "summary",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          },
+          {
+            "task": "report",
+            "selected_model": "qwen3.5:4b",
+            "candidates": [
+              "phi4-mini:3.8b",
+              "qwen3.5:4b",
+              "granite4.1:3b",
+              "ministral-3:3b"
+            ],
+            "reason": "task_policy",
+            "gpu_available": true
+          }
+        ],
+        "pages": [
+          {
+            "page_number": 1,
+            "text": "Handwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n---\n---\n---\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSym",
+            "confidence": null,
+            "layout_json": {
+              "blocks": [],
+              "tables": []
+            }
+          }
+        ],
+        "entities": [
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "visit_date",
+            "raw_value": "date of visit: 2026-06-27",
+            "normalized_value": "2026-06-27",
+            "attributes": {
+              "label": "date of visit"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "symptom",
+            "raw_value": "mild dizziness",
+            "normalized_value": "mild dizziness",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "allergy",
+            "raw_value": "none",
+            "normalized_value": "none",
+            "attributes": {},
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          },
+          {
+            "entity_type": "medication",
+            "raw_value": "Lisinopril 5 mg daily",
+            "normalized_value": "lisinopril",
+            "attributes": {
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started"
+            },
+            "page_number": 1,
+            "confidence": null
+          }
+        ],
+        "labs": [],
+        "medications": [
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1
+          }
+        ],
+        "timeline_events": [
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27",
+            "metadata": {
+              "label": "date of visit"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "document_date",
+            "event_date": "2026-06-27",
+            "title": "Document date detected (2026-06-27)",
+            "description": "Date extracted from OCR text",
+            "metadata": {},
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          },
+          {
+            "id": 0,
+            "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily",
+            "metadata": {
+              "medication_name": "Lisinopril",
+              "dosage": "5 mg",
+              "frequency": "daily",
+              "action": "started",
+              "start_date": "2026-06-27",
+              "end_date": null,
+              "page_number": 1,
+              "source_span": "Lisinopril 5 mg daily"
+            },
+            "page_number": 1
+          }
+        ],
+        "indexed_chunks": 2,
+        "safety": {
+          "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+          "educational_use_only": true,
+          "prohibited_actions": [
+            "No diagnosis",
+            "No treatment recommendation",
+            "No medication prescribing",
+            "Not a substitute for licensed clinicians"
+          ]
+        }
+      },
+      "ocr": [
+        {
+          "page_number": 1,
+          "text": "Handwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n---\n---\n---\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSymptoms: mild dizziness\nAllergy: none\n---\n\nHandwritten Follow-up Note\nDate of visit: 2026-06-27\nnew Lisinopril 5 mg daily\nSym",
+          "confidence": null,
+          "layout_json": {
+            "blocks": [],
+            "tables": []
+          },
+          "provider": "dual-path"
+        }
+      ],
+      "entities": [
+        {
+          "id": 762,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 763,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 764,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 765,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 766,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 767,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 768,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 769,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 770,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 771,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 772,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 773,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 774,
+          "entity_type": "allergy",
+          "raw_value": "none",
+          "normalized_value": "none",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 775,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 776,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 777,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 778,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 779,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 780,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 781,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 782,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 783,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 784,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 785,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 786,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 787,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 788,
+          "entity_type": "medication",
+          "raw_value": "Lisinopril 5 mg daily",
+          "normalized_value": "lisinopril",
+          "attributes": {
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 749,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 750,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 751,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 752,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 753,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 754,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 755,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 756,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 757,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 758,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 759,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 760,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 761,
+          "entity_type": "symptom",
+          "raw_value": "mild dizziness",
+          "normalized_value": "mild dizziness",
+          "attributes": {},
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 735,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 736,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 737,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 738,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 739,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 740,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 741,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 742,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 743,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 744,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 745,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 746,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 747,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        },
+        {
+          "id": 748,
+          "entity_type": "visit_date",
+          "raw_value": "date of visit: 2026-06-27",
+          "normalized_value": "2026-06-27",
+          "attributes": {
+            "label": "date of visit"
+          },
+          "page_number": 1,
+          "confidence": null
+        }
+      ],
+      "medications": [
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        },
+        {
+          "medication_name": "Lisinopril",
+          "dosage": "5 mg",
+          "frequency": "daily",
+          "action": "started",
+          "start_date": "2026-06-27",
+          "end_date": null,
+          "page_number": 1
+        }
+      ],
+      "labs": []
+    }
+  },
+  "api": {
+    "health": {
+      "status": "ok"
+    },
+    "ready": {
+      "http_status": 503,
+      "status": "degraded",
+      "checks": {
+        "llm_providers": {
+          "ok": false,
+          "ready": 0
+        },
+        "ocr_providers": {
+          "ok": true,
+          "ready": 2
+        },
+        "ollama_url_safe": {
+          "ok": true
+        }
+      }
+    },
+    "providers_config": {
+      "parser_engines": [
+        "auto",
+        "paddleocr",
+        "glmocr",
+        "docling"
+      ],
+      "llm_providers": [
+        "auto",
+        "openai",
+        "gemini",
+        "anthropic"
+      ],
+      "default_llm_provider": "auto",
+      "model_selection_modes": [
+        "auto",
+        "explicit_model_id"
+      ],
+      "ocr_engine_flags": {
+        "paddleocr": false,
+        "glm_ocr": true
+      },
+      "max_upload_size_mb": 50,
+      "supported_file_types": [
+        "pdf",
+        "png",
+        "jpg",
+        "jpeg",
+        "tiff",
+        "tif"
+      ],
+      "confidence_threshold": 0.6
+    },
+    "system_health": {
+      "status": "ok",
+      "gpu_available": true,
+      "gpu_info": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "driver_version": "595.71.05",
+        "cuda_version": "13.2",
+        "memory_total_mib": 8188,
+        "memory_used_mib": 6775,
+        "utilization_gpu_percent": 6
+      },
+      "ollama": {
+        "ok": true,
+        "models": [
+          "nomic-embed-text:latest",
+          "qwen3:8b",
+          "granite4.1:3b",
+          "qwen3.5:4b",
+          "qwen3-embedding:4b",
+          "glm-ocr:latest",
+          "qwen3.5:0.8b",
+          "qwen3.5:2b",
+          "qwen3-embedding:8b",
+          "qwen3-embedding:0.6b",
+          "qwen3.5:9b",
+          "ministral-3:3b",
+          "nemotron-3-nano:4b",
+          "granite4.1:8b",
+          "translategemma:4b",
+          "phi3.5:3.8b",
+          "phi4-mini:3.8b",
+          "deepseek-ocr:latest"
+        ],
+        "count": 18
+      },
+      "memory_usage_mb": 174.109375,
+      "active_agent_runs": 0
+    },
+    "disclaimer": {
+      "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+      "updated_at": "2026-06-30T10:26:25.151434+00:00"
+    }
+  },
+  "workflow": {
+    "search": {
+      "query": "metformin and abnormal lab values",
+      "results": [
+        {
+          "chunk_id": "41a41430cdc545a4b78bd3d217d7fcb3",
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "document_name": "prescription_sample.pdf",
+          "page_number": 1,
+          "score": 0.05886486486486486,
+          "keyword_score": 0.1308108108108108,
+          "semantic_score": 0.0,
+          "text": "City Care Medical Center Prescription Patient Name: Ahmad Khan Patient ID: MRN-88421 Age: 34 Sex: Male Visit Date: 2026-06-21 Doctor: Dr. Sarah Lee Diagnosis: Type 2 diabetes mellitus Allergy: Penicillin Medications: Started Metformin 500 mg bid Started Atorvastatin 20 mg daily Aspirin 75 mg once daily Follow-up Date: 2026-07-05",
+          "metadata": {
+            "page_number": 1,
+            "section_name": "General",
+            "detected_dates": [
+              "2026-06-21",
+              "2026-07-05"
+            ],
+            "date_min": "2026-06-21",
+            "date_max": "2026-07-05"
+          }
+        }
+      ],
+      "took_ms": 10772,
+      "filters_applied": {
+        "document_ids": [
+          "edfc9145449e43e2bde7834e988f5a61",
+          "6f67d3d746a942789e3f0fd879333094",
+          "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+          "9da32c482d20436cb307dbf3d9e61c49"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "filters": {}
+      },
+      "diagnostics": {
+        "total_chunks_scanned": 5,
+        "chunks_after_filters": 5,
+        "chunks_discarded_by_score": 4,
+        "query_embedding_available": true,
+        "applied_filters": [
+          "document_ids"
+        ],
+        "semantic_weight": 0.55,
+        "keyword_weight": 0.45
+      }
+    },
+    "qa": {
+      "session_id": "ec598906b9884d8a88846fc367981a43",
+      "answer": "Extracted Information From Uploaded Documents:\nCity Care Medical Center Prescription Patient Name: Ahmad Khan Patient ID: MRN-88421 Age: 34 Sex: Male Visit Date: 2026-06-21 Doctor: Dr. Sarah Lee Diagnosis: Type 2 diabetes mellitus Allergy: Penicillin Medications: Started Metformin 500 mg bid Started Atorvastatin 20 mg daily Aspirin 75 mg once daily Follow-up Date: 2026-07-05\n\nEducational Background Information:\nHemoglobin, white blood cell count, platelet count, creatinine, sodium, potassium, ALT, and AST are laboratory markers commonly interpreted using lab-specific reference ranges. A value outside a printed range can still need context such as age, hydration status, medications, and known conditions. # Local Educational Medical Reference Notes\n\nDisclaimer: Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+      "extracted_information": "City Care Medical Center Prescription Patient Name: Ahmad Khan Patient ID: MRN-88421 Age: 34 Sex: Male Visit Date: 2026-06-21 Doctor: Dr. Sarah Lee Diagnosis: Type 2 diabetes mellitus Allergy: Penicillin Medications: Started Metformin 500 mg bid Started Atorvastatin 20 mg daily Aspirin 75 mg once daily Follow-up Date: 2026-07-05",
+      "educational_background": "Hemoglobin, white blood cell count, platelet count, creatinine, sodium, potassium, ALT, and AST are laboratory markers commonly interpreted using lab-specific reference ranges. A value outside a printed range can still need context such as age, hydration status, medications, and known conditions. # Local Educational Medical Reference Notes\n\nDisclaimer: Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+      "citations": [
+        {
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "document_name": "prescription_sample.pdf",
+          "page_number": 1,
+          "chunk_id": "41a41430cdc545a4b78bd3d217d7fcb3",
+          "evidence_text": "City Care Medical Center Prescription Patient Name: Ahmad Khan Patient ID: MRN-88421 Age: 34 Sex: Male Visit Date: 2026-06-21 Doctor: Dr. Sarah Lee Diagnosis: Type 2 diabetes mellitus Allergy: Penicillin Medications: Started Metformin 500 mg bid Started Atorvastatin 20 mg daily Aspirin 75 mg once daily Follow-up Date: 2026-07-05"
+        }
+      ],
+      "safety": {
+        "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+        "educational_use_only": true,
+        "prohibited_actions": [
+          "No diagnosis",
+          "No treatment recommendation",
+          "No medication prescribing",
+          "Not a substitute for licensed clinicians"
+        ]
+      },
+      "model": "qwen3.5:4b"
+    },
+    "summary": {
+      "summary_type": "plain",
+      "length": "medium",
+      "content": "Plain summary (fallback mode): Referral Letter Date of Visit: 2026-06-24 Patient Name: Ahmad Khan Hospital: City Care Hospital Chief Complaint: persistent cough Procedure: Chest X-ray Provider: Dr. Umar Ali City Care Medical Center Laboratory Report Patient Name: Ahmad Khan Date of Service: 2026-06-25 Hemoglobin: 10.8 g/dL (13.0-17.0) WBC: 12.2 K/uL (4.0-11.0) Creatinine: 1.4 mg/dL (0.7-1.3) Glucose: 168 mg/dL (70-99) Sodium: 138 mmol/L (135-145) Potassium: 4.6 mmol/L (3.5-5.1) --- --- Handwritten Follow-up Note Date of visit: 2026-06-27 new Lisinopril 5 mg daily Symptoms: mild dizziness Allergy: none --- --- --- --- --- Handwritten Follow-up Note Date of visit: 2026-06-27 new Lisinopril 5 mg daily Symptoms: mild dizziness Allergy: none --- --- Handwritten Follow-up Note Date of visit: 2026-06-27 new Lisinopril 5 mg daily Symptoms: mild dizziness Allergy: none --- --- Handwritten Follow-up Note Date of visit: 2026-06-. Educational use only. Consult qualified healthcare professionals for decisions.\n\nDisclaimer: Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.\n\nModel used: phi4-mini:3.8b",
+      "citations": [],
+      "safety": {
+        "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+        "educational_use_only": true,
+        "prohibited_actions": [
+          "No diagnosis",
+          "No treatment recommendation",
+          "No medication prescribing",
+          "Not a substitute for licensed clinicians"
+        ]
+      }
+    },
+    "timeline": {
+      "events": [
+        {
+          "id": 458,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-21",
+          "title": "Visit Date documented",
+          "description": "Visit Date: 2026-06-21",
+          "metadata": {
+            "label": "visit date"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 459,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "document_date",
+          "event_date": "2026-06-21",
+          "title": "Document date detected (2026-06-21)",
+          "description": "Date extracted from OCR text",
+          "metadata": {},
+          "page_number": 1
+        },
+        {
+          "id": 461,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "diagnosis_mention",
+          "event_date": "2026-06-21",
+          "title": "Diagnosis mentioned",
+          "description": "Type 2 diabetes mellitus",
+          "metadata": {
+            "diagnosis": "Type 2 diabetes mellitus"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 462,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "medication_change",
+          "event_date": "2026-06-21",
+          "title": "Medication started: Metformin",
+          "description": "500 mg bid",
+          "metadata": {
+            "medication_name": "Metformin",
+            "dosage": "500 mg",
+            "frequency": "bid",
+            "action": "started",
+            "start_date": "2026-06-21",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Metformin 500 mg bid"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 463,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "medication_change",
+          "event_date": "2026-06-21",
+          "title": "Medication started: Atorvastatin",
+          "description": "20 mg daily",
+          "metadata": {
+            "medication_name": "Atorvastatin",
+            "dosage": "20 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-21",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Atorvastatin 20 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 464,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "medication_change",
+          "event_date": "2026-06-21",
+          "title": "Medication started: Aspirin",
+          "description": "75 mg once",
+          "metadata": {
+            "medication_name": "Aspirin",
+            "dosage": "75 mg",
+            "frequency": "once",
+            "action": "started",
+            "start_date": "2026-06-21",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Aspirin 75 mg once"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 473,
+          "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-24",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-24",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 474,
+          "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+          "event_type": "document_date",
+          "event_date": "2026-06-24",
+          "title": "Document date detected (2026-06-24)",
+          "description": "Date extracted from OCR text",
+          "metadata": {},
+          "page_number": 1
+        },
+        {
+          "id": 475,
+          "document_id": "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+          "event_type": "procedure",
+          "event_date": "2026-06-24",
+          "title": "Procedure: Chest X-ray",
+          "description": "Chest X-ray",
+          "metadata": {
+            "procedure": "chest x-ray"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 465,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-25",
+          "title": "Date Of Service documented",
+          "description": "Date Of Service: 2026-06-25",
+          "metadata": {
+            "label": "date of service"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 466,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "document_date",
+          "event_date": "2026-06-25",
+          "title": "Document date detected (2026-06-25)",
+          "description": "Date extracted from OCR text",
+          "metadata": {},
+          "page_number": 1
+        },
+        {
+          "id": 467,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "lab_test",
+          "event_date": "2026-06-25",
+          "title": "Lab: hemoglobin",
+          "description": "10.8 g/dL",
+          "metadata": {
+            "test_name": "hemoglobin",
+            "value": "10.8",
+            "unit": "g/dL",
+            "reference_range": "13.0-17.0",
+            "is_out_of_range": true
+          },
+          "page_number": 1
+        },
+        {
+          "id": 468,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "lab_test",
+          "event_date": "2026-06-25",
+          "title": "Lab: white blood cell count",
+          "description": "12.2 K/uL",
+          "metadata": {
+            "test_name": "white blood cell count",
+            "value": "12.2",
+            "unit": "K/uL",
+            "reference_range": "4.0-11.0",
+            "is_out_of_range": true
+          },
+          "page_number": 1
+        },
+        {
+          "id": 469,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "lab_test",
+          "event_date": "2026-06-25",
+          "title": "Lab: creatinine",
+          "description": "1.4 mg/dL",
+          "metadata": {
+            "test_name": "creatinine",
+            "value": "1.4",
+            "unit": "mg/dL",
+            "reference_range": "0.7-1.3",
+            "is_out_of_range": true
+          },
+          "page_number": 1
+        },
+        {
+          "id": 470,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "lab_test",
+          "event_date": "2026-06-25",
+          "title": "Lab: glucose",
+          "description": "168 mg/dL",
+          "metadata": {
+            "test_name": "glucose",
+            "value": "168",
+            "unit": "mg/dL",
+            "reference_range": "70-99",
+            "is_out_of_range": true
+          },
+          "page_number": 1
+        },
+        {
+          "id": 471,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "lab_test",
+          "event_date": "2026-06-25",
+          "title": "Lab: sodium",
+          "description": "138 mmol/L",
+          "metadata": {
+            "test_name": "sodium",
+            "value": "138",
+            "unit": "mmol/L",
+            "reference_range": "135-145",
+            "is_out_of_range": false
+          },
+          "page_number": 1
+        },
+        {
+          "id": 472,
+          "document_id": "6f67d3d746a942789e3f0fd879333094",
+          "event_type": "lab_test",
+          "event_date": "2026-06-25",
+          "title": "Lab: potassium",
+          "description": "4.6 mmol/L",
+          "metadata": {
+            "test_name": "potassium",
+            "value": "4.6",
+            "unit": "mmol/L",
+            "reference_range": "3.5-5.1",
+            "is_out_of_range": false
+          },
+          "page_number": 1
+        },
+        {
+          "id": 476,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 477,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 478,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 479,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 480,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 481,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 482,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 483,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 484,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 485,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 486,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 487,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 488,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 489,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "doctor_visit",
+          "event_date": "2026-06-27",
+          "title": "Date Of Visit documented",
+          "description": "Date Of Visit: 2026-06-27",
+          "metadata": {
+            "label": "date of visit"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 490,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "document_date",
+          "event_date": "2026-06-27",
+          "title": "Document date detected (2026-06-27)",
+          "description": "Date extracted from OCR text",
+          "metadata": {},
+          "page_number": 1
+        },
+        {
+          "id": 491,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 492,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 493,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 494,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 495,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 496,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 497,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 498,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 499,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 500,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 501,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 502,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 503,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 504,
+          "document_id": "9da32c482d20436cb307dbf3d9e61c49",
+          "event_type": "medication_change",
+          "event_date": "2026-06-27",
+          "title": "Medication started: Lisinopril",
+          "description": "5 mg daily",
+          "metadata": {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started",
+            "start_date": "2026-06-27",
+            "end_date": null,
+            "page_number": 1,
+            "source_span": "Lisinopril 5 mg daily"
+          },
+          "page_number": 1
+        },
+        {
+          "id": 460,
+          "document_id": "edfc9145449e43e2bde7834e988f5a61",
+          "event_type": "document_date",
+          "event_date": "2026-07-05",
+          "title": "Document date detected (2026-07-05)",
+          "description": "Date extracted from OCR text",
+          "metadata": {},
+          "page_number": 1
+        }
+      ],
+      "filters_applied": {
+        "document_ids": [
+          "edfc9145449e43e2bde7834e988f5a61",
+          "6f67d3d746a942789e3f0fd879333094",
+          "25c0a4ac2dc9456d8dc745dd0e57a8bb",
+          "9da32c482d20436cb307dbf3d9e61c49"
+        ],
+        "event_types": [],
+        "start_date": null,
+        "end_date": null
+      }
+    },
+    "report": {
+      "report_id": "4a99226da0014312bc359342b4dc2ece",
+      "title": "Doctor Visit Preparation - Live Verification",
+      "markdown": "# Doctor Visit Preparation - Live Verification\n\nGenerated at: 2026-06-30T10:33:18.636571+00:00\n\n## Uploaded Documents Reviewed\n- prescription_sample.pdf (pdf)\n- lab_report_sample.pdf (pdf)\n- scanned_referral_sample.png (png)\n- handwritten_note_sample.png (png)\n\n\n## Medications Mentioned\n- Metformin 500 mg (bid) [started]\n- Atorvastatin 20 mg (daily) [started]\n- Aspirin 75 mg (once) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n\n\n## Laboratory Findings\n- hemoglobin: 10.8 g/dL\n  (Ref: 13.0-17.0)\n   - Outside range\n- white blood cell count: 12.2 K/uL\n  (Ref: 4.0-11.0)\n   - Outside range\n- creatinine: 1.4 mg/dL\n  (Ref: 0.7-1.3)\n   - Outside range\n- glucose: 168 mg/dL\n  (Ref: 70-99)\n   - Outside range\n- sodium: 138 mmol/L\n  (Ref: 135-145)\n   - Within range\n- potassium: 4.6 mmol/L\n  (Ref: 3.5-5.1)\n   - Within range\n\n\n## Timeline of Events\n- 2026-06-21: Visit Date documented\n- 2026-06-21: Document date detected (2026-06-21)\n- 2026-06-21: Diagnosis mentioned\n- 2026-06-21: Medication started: Metformin\n- 2026-06-21: Medication started: Atorvastatin\n- 2026-06-21: Medication started: Aspirin\n- 2026-06-24: Date Of Visit documented\n- 2026-06-24: Document date detected (2026-06-24)\n- 2026-06-24: Procedure: Chest X-ray\n- 2026-06-25: Date Of Service documented\n- 2026-06-25: Document date detected (2026-06-25)\n- 2026-06-25: Lab: hemoglobin\n- 2026-06-25: Lab: white blood cell count\n- 2026-06-25: Lab: creatinine\n- 2026-06-25: Lab: glucose\n- 2026-06-25: Lab: sodium\n- 2026-06-25: Lab: potassium\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Document date detected (2026-06-27)\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-07-05: Document date detected (2026-07-05)\n\n\n## Questions to Discuss With a Healthcare Professional\n- Which findings require follow-up testing?\n- Are there medication interactions or contraindications to review?\n- What trend changes in labs or symptoms need professional interpretation?\n\n## Glossary of Terms\n- **hemoglobin**: Laboratory test mentioned in uploaded records.\n- **white blood cell count**: Laboratory test mentioned in uploaded records.\n- **creatinine**: Laboratory test mentioned in uploaded records.\n- **glucose**: Laboratory test mentioned in uploaded records.\n- **sodium**: Laboratory test mentioned in uploaded records.\n- **potassium**: Laboratory test mentioned in uploaded records.\n- **Metformin**: Medication name extracted from uploaded records.\n- **Atorvastatin**: Medication name extracted from uploaded records.\n- **Aspirin**: Medication name extracted from uploaded records.\n- **Lisinopril**: Medication name extracted from uploaded records.\n\n\n## Disclaimer\nEducational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+      "html": "<article class='report'>\n<h1>Doctor Visit Preparation - Live Verification</h1>\n<p>Generated at: 2026-06-30T10:33:18.636571+00:00</p>\n<h2>Uploaded Documents Reviewed</h2>\n<li>prescription_sample.pdf (pdf)</li>\n<li>lab_report_sample.pdf (pdf)</li>\n<li>scanned_referral_sample.png (png)</li>\n<li>handwritten_note_sample.png (png)</li>\n<h2>Medications Mentioned</h2>\n<li>Metformin 500 mg (bid) [started]</li>\n<li>Atorvastatin 20 mg (daily) [started]</li>\n<li>Aspirin 75 mg (once) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<li>Lisinopril 5 mg (daily) [started]</li>\n<h2>Laboratory Findings</h2>\n<li>hemoglobin: 10.8 g/dL</li>\n<p>(Ref: 13.0-17.0)</p>\n<li>Outside range</li>\n<li>white blood cell count: 12.2 K/uL</li>\n<p>(Ref: 4.0-11.0)</p>\n<li>Outside range</li>\n<li>creatinine: 1.4 mg/dL</li>\n<p>(Ref: 0.7-1.3)</p>\n<li>Outside range</li>\n<li>glucose: 168 mg/dL</li>\n<p>(Ref: 70-99)</p>\n<li>Outside range</li>\n<li>sodium: 138 mmol/L</li>\n<p>(Ref: 135-145)</p>\n<li>Within range</li>\n<li>potassium: 4.6 mmol/L</li>\n<p>(Ref: 3.5-5.1)</p>\n<li>Within range</li>\n<h2>Timeline of Events</h2>\n<li>2026-06-21: Visit Date documented</li>\n<li>2026-06-21: Document date detected (2026-06-21)</li>\n<li>2026-06-21: Diagnosis mentioned</li>\n<li>2026-06-21: Medication started: Metformin</li>\n<li>2026-06-21: Medication started: Atorvastatin</li>\n<li>2026-06-21: Medication started: Aspirin</li>\n<li>2026-06-24: Date Of Visit documented</li>\n<li>2026-06-24: Document date detected (2026-06-24)</li>\n<li>2026-06-24: Procedure: Chest X-ray</li>\n<li>2026-06-25: Date Of Service documented</li>\n<li>2026-06-25: Document date detected (2026-06-25)</li>\n<li>2026-06-25: Lab: hemoglobin</li>\n<li>2026-06-25: Lab: white blood cell count</li>\n<li>2026-06-25: Lab: creatinine</li>\n<li>2026-06-25: Lab: glucose</li>\n<li>2026-06-25: Lab: sodium</li>\n<li>2026-06-25: Lab: potassium</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Date Of Visit documented</li>\n<li>2026-06-27: Document date detected (2026-06-27)</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-06-27: Medication started: Lisinopril</li>\n<li>2026-07-05: Document date detected (2026-07-05)</li>\n<h2>Questions to Discuss With a Healthcare Professional</h2>\n<li>Which findings require follow-up testing?</li>\n<li>Are there medication interactions or contraindications to review?</li>\n<li>What trend changes in labs or symptoms need professional interpretation?</li>\n<h2>Glossary of Terms</h2>\n<li>**hemoglobin**: Laboratory test mentioned in uploaded records.</li>\n<li>**white blood cell count**: Laboratory test mentioned in uploaded records.</li>\n<li>**creatinine**: Laboratory test mentioned in uploaded records.</li>\n<li>**glucose**: Laboratory test mentioned in uploaded records.</li>\n<li>**sodium**: Laboratory test mentioned in uploaded records.</li>\n<li>**potassium**: Laboratory test mentioned in uploaded records.</li>\n<li>**Metformin**: Medication name extracted from uploaded records.</li>\n<li>**Atorvastatin**: Medication name extracted from uploaded records.</li>\n<li>**Aspirin**: Medication name extracted from uploaded records.</li>\n<li>**Lisinopril**: Medication name extracted from uploaded records.</li>\n<h2>Disclaimer</h2>\n<p>Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.</p>\n</article>",
+      "json_payload": {
+        "title": "Doctor Visit Preparation - Live Verification",
+        "documents": [
+          "prescription_sample.pdf",
+          "lab_report_sample.pdf",
+          "scanned_referral_sample.png",
+          "handwritten_note_sample.png"
+        ],
+        "labs": [
+          {
+            "test_name": "hemoglobin",
+            "value": "10.8",
+            "unit": "g/dL",
+            "reference_range": "13.0-17.0",
+            "is_out_of_range": true
+          },
+          {
+            "test_name": "white blood cell count",
+            "value": "12.2",
+            "unit": "K/uL",
+            "reference_range": "4.0-11.0",
+            "is_out_of_range": true
+          },
+          {
+            "test_name": "creatinine",
+            "value": "1.4",
+            "unit": "mg/dL",
+            "reference_range": "0.7-1.3",
+            "is_out_of_range": true
+          },
+          {
+            "test_name": "glucose",
+            "value": "168",
+            "unit": "mg/dL",
+            "reference_range": "70-99",
+            "is_out_of_range": true
+          },
+          {
+            "test_name": "sodium",
+            "value": "138",
+            "unit": "mmol/L",
+            "reference_range": "135-145",
+            "is_out_of_range": false
+          },
+          {
+            "test_name": "potassium",
+            "value": "4.6",
+            "unit": "mmol/L",
+            "reference_range": "3.5-5.1",
+            "is_out_of_range": false
+          }
+        ],
+        "medications": [
+          {
+            "medication_name": "Metformin",
+            "dosage": "500 mg",
+            "frequency": "bid",
+            "action": "started"
+          },
+          {
+            "medication_name": "Atorvastatin",
+            "dosage": "20 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Aspirin",
+            "dosage": "75 mg",
+            "frequency": "once",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          },
+          {
+            "medication_name": "Lisinopril",
+            "dosage": "5 mg",
+            "frequency": "daily",
+            "action": "started"
+          }
+        ],
+        "timeline": [
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-21",
+            "title": "Visit Date documented",
+            "description": "Visit Date: 2026-06-21"
+          },
+          {
+            "event_type": "document_date",
+            "event_date": "2026-06-21",
+            "title": "Document date detected (2026-06-21)",
+            "description": "Date extracted from OCR text"
+          },
+          {
+            "event_type": "diagnosis_mention",
+            "event_date": "2026-06-21",
+            "title": "Diagnosis mentioned",
+            "description": "Type 2 diabetes mellitus"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-21",
+            "title": "Medication started: Metformin",
+            "description": "500 mg bid"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-21",
+            "title": "Medication started: Atorvastatin",
+            "description": "20 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-21",
+            "title": "Medication started: Aspirin",
+            "description": "75 mg once"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-24",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-24"
+          },
+          {
+            "event_type": "document_date",
+            "event_date": "2026-06-24",
+            "title": "Document date detected (2026-06-24)",
+            "description": "Date extracted from OCR text"
+          },
+          {
+            "event_type": "procedure",
+            "event_date": "2026-06-24",
+            "title": "Procedure: Chest X-ray",
+            "description": "Chest X-ray"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-25",
+            "title": "Date Of Service documented",
+            "description": "Date Of Service: 2026-06-25"
+          },
+          {
+            "event_type": "document_date",
+            "event_date": "2026-06-25",
+            "title": "Document date detected (2026-06-25)",
+            "description": "Date extracted from OCR text"
+          },
+          {
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: hemoglobin",
+            "description": "10.8 g/dL"
+          },
+          {
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: white blood cell count",
+            "description": "12.2 K/uL"
+          },
+          {
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: creatinine",
+            "description": "1.4 mg/dL"
+          },
+          {
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: glucose",
+            "description": "168 mg/dL"
+          },
+          {
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: sodium",
+            "description": "138 mmol/L"
+          },
+          {
+            "event_type": "lab_test",
+            "event_date": "2026-06-25",
+            "title": "Lab: potassium",
+            "description": "4.6 mmol/L"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "doctor_visit",
+            "event_date": "2026-06-27",
+            "title": "Date Of Visit documented",
+            "description": "Date Of Visit: 2026-06-27"
+          },
+          {
+            "event_type": "document_date",
+            "event_date": "2026-06-27",
+            "title": "Document date detected (2026-06-27)",
+            "description": "Date extracted from OCR text"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "medication_change",
+            "event_date": "2026-06-27",
+            "title": "Medication started: Lisinopril",
+            "description": "5 mg daily"
+          },
+          {
+            "event_type": "document_date",
+            "event_date": "2026-07-05",
+            "title": "Document date detected (2026-07-05)",
+            "description": "Date extracted from OCR text"
+          }
+        ],
+        "safety": {
+          "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+          "educational_use_only": true,
+          "prohibited_actions": [
+            "No diagnosis",
+            "No treatment recommendation",
+            "No medication prescribing",
+            "Not a substitute for licensed clinicians"
+          ]
+        }
+      },
+      "available_formats": [
+        "html",
+        "pdf",
+        "json",
+        "markdown"
+      ],
+      "safety": {
+        "disclaimer": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.",
+        "educational_use_only": true,
+        "prohibited_actions": [
+          "No diagnosis",
+          "No treatment recommendation",
+          "No medication prescribing",
+          "Not a substitute for licensed clinicians"
+        ]
+      }
+    },
+    "report_export": {
+      "report_id": "4a99226da0014312bc359342b4dc2ece",
+      "format": "markdown",
+      "content": "# Doctor Visit Preparation - Live Verification\n\nGenerated at: 2026-06-30T10:33:18.636571+00:00\n\n## Uploaded Documents Reviewed\n- prescription_sample.pdf (pdf)\n- lab_report_sample.pdf (pdf)\n- scanned_referral_sample.png (png)\n- handwritten_note_sample.png (png)\n\n\n## Medications Mentioned\n- Metformin 500 mg (bid) [started]\n- Atorvastatin 20 mg (daily) [started]\n- Aspirin 75 mg (once) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n- Lisinopril 5 mg (daily) [started]\n\n\n## Laboratory Findings\n- hemoglobin: 10.8 g/dL\n  (Ref: 13.0-17.0)\n   - Outside range\n- white blood cell count: 12.2 K/uL\n  (Ref: 4.0-11.0)\n   - Outside range\n- creatinine: 1.4 mg/dL\n  (Ref: 0.7-1.3)\n   - Outside range\n- glucose: 168 mg/dL\n  (Ref: 70-99)\n   - Outside range\n- sodium: 138 mmol/L\n  (Ref: 135-145)\n   - Within range\n- potassium: 4.6 mmol/L\n  (Ref: 3.5-5.1)\n   - Within range\n\n\n## Timeline of Events\n- 2026-06-21: Visit Date documented\n- 2026-06-21: Document date detected (2026-06-21)\n- 2026-06-21: Diagnosis mentioned\n- 2026-06-21: Medication started: Metformin\n- 2026-06-21: Medication started: Atorvastatin\n- 2026-06-21: Medication started: Aspirin\n- 2026-06-24: Date Of Visit documented\n- 2026-06-24: Document date detected (2026-06-24)\n- 2026-06-24: Procedure: Chest X-ray\n- 2026-06-25: Date Of Service documented\n- 2026-06-25: Document date detected (2026-06-25)\n- 2026-06-25: Lab: hemoglobin\n- 2026-06-25: Lab: white blood cell count\n- 2026-06-25: Lab: creatinine\n- 2026-06-25: Lab: glucose\n- 2026-06-25: Lab: sodium\n- 2026-06-25: Lab: potassium\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Date Of Visit documented\n- 2026-06-27: Document date detected (2026-06-27)\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-06-27: Medication started: Lisinopril\n- 2026-07-05: Document date detected (2026-07-05)\n\n\n## Questions to Discuss With a Healthcare Professional\n- Which findings require follow-up testing?\n- Are there medication interactions or contraindications to review?\n- What trend changes in labs or symptoms need professional interpretation?\n\n## Glossary of Terms\n- **hemoglobin**: Laboratory test mentioned in uploaded records.\n- **white blood cell count**: Laboratory test mentioned in uploaded records.\n- **creatinine**: Laboratory test mentioned in uploaded records.\n- **glucose**: Laboratory test mentioned in uploaded records.\n- **sodium**: Laboratory test mentioned in uploaded records.\n- **potassium**: Laboratory test mentioned in uploaded records.\n- **Metformin**: Medication name extracted from uploaded records.\n- **Atorvastatin**: Medication name extracted from uploaded records.\n- **Aspirin**: Medication name extracted from uploaded records.\n- **Lisinopril**: Medication name extracted from uploaded records.\n\n\n## Disclaimer\nEducational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals."
+    },
+    "real_chain": {
+      "document_id": "6f67d3d746a942789e3f0fd879333094",
+      "steps": {
+        "upload": true,
+        "process": true,
+        "ocr_pages": 1,
+        "entities": 8,
+        "retrieval_hits": 1,
+        "qa_citations": 1,
+        "summary_generated": true,
+        "timeline_events": 47,
+        "report_id": "4a99226da0014312bc359342b4dc2ece"
+      }
+    }
+  },
+  "frontend": {
+    "routes": {
+      "/": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/upload-center": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/medical-documents": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/ai-chat": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/ocr-viewer": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/timeline": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/medication-history": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/laboratory-results": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/reports": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/search": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/memory": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/agent-activity": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/settings": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/model-manager": {
+        "status_code": 200,
+        "contains_title": true
+      },
+      "/system-monitoring": {
+        "status_code": 200,
+        "contains_title": true
+      }
+    }
+  },
+  "db": {
+    "counts": {
+      "documents": 4,
+      "ocr_pages": 4,
+      "entities": 79,
+      "labs": 6,
+      "medications": 17,
+      "timeline_events": 47,
+      "chunks": 5,
+      "embeddings_non_null": 5
+    }
+  },
+  "checks": [
+    {
+      "name": "backend health ok",
+      "passed": true,
+      "detail": "{'status': 'ok'}"
+    },
+    {
+      "name": "backend ready endpoint reachable",
+      "passed": true,
+      "detail": "{'http_status': 503, 'status': 'degraded', 'checks': {'llm_providers': {'ok': False, 'ready': 0}, 'ocr_providers': {'ok': True, 'ready': 2}, 'ollama_url_safe': {'ok': True}}}"
+    },
+    {
+      "name": "glm ocr enabled",
+      "passed": true,
+      "detail": "{'paddleocr': False, 'glm_ocr': True}"
+    },
+    {
+      "name": "gpu visible to backend",
+      "passed": true,
+      "detail": "{'available': True, 'name': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'driver_version': '595.71.05', 'cuda_version': '13.2', 'memory_total_mib': 8188, 'memory_used_mib': 6775, 'utilization_gpu_percent': 6}"
+    },
+    {
+      "name": "prescription upload",
+      "passed": true,
+      "detail": "id=edfc9145449e43e2bde7834e988f5a61, type=pdf"
+    },
+    {
+      "name": "lab_report upload",
+      "passed": true,
+      "detail": "id=6f67d3d746a942789e3f0fd879333094, type=pdf"
+    },
+    {
+      "name": "scanned_document upload",
+      "passed": true,
+      "detail": "id=25c0a4ac2dc9456d8dc745dd0e57a8bb, type=png"
+    },
+    {
+      "name": "handwritten_note upload",
+      "passed": true,
+      "detail": "id=9da32c482d20436cb307dbf3d9e61c49, type=png"
+    },
+    {
+      "name": "prescription process completed",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "lab_report process completed",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "scanned_document process completed",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "handwritten_note process completed",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "medical entity extraction",
+      "passed": true,
+      "detail": "entities_total=79"
+    },
+    {
+      "name": "medication extraction",
+      "passed": true,
+      "detail": "prescription_medications=3"
+    },
+    {
+      "name": "lab value extraction",
+      "passed": true,
+      "detail": "lab_results=6"
+    },
+    {
+      "name": "lab out-of-range flagging",
+      "passed": true,
+      "detail": "[{'test_name': 'hemoglobin', 'value_text': '10.8', 'unit': 'g/dL', 'reference_range': '13.0-17.0', 'is_out_of_range': True, 'event_date': '2026-06-25', 'page_number': 1}, {'test_name': 'white blood cell count', 'value_text': '12.2', 'unit': 'K/uL', 'reference_range': '4.0-11.0', 'is_out_of_range': True, 'event_date': '2026-06-25', 'page_number': 1}, {'test_name': 'creatinine', 'value_text': '1.4', 'unit': 'mg/dL', 'reference_range': '0.7-1.3', 'is_out_of_range': True, 'event_date': '2026-06-25', 'page_number': 1}, {'test_name': 'glucose', 'value_text': '168', 'unit': 'mg/dL', 'reference_range': '70-99', 'is_out_of_range': True, 'event_date': '2026-06-25', 'page_number': 1}, {'test_name': 'sodium', 'value_text': '138', 'unit': 'mmol/L', 'reference_range': '135-145', 'is_out_of_range': False, 'event_date': '2026-06-25', 'page_number': 1}, {'test_name': 'potassium', 'value_text': '4.6', 'unit': 'mmol/L', 'reference_range': '3.5-5.1', 'is_out_of_range': False, 'event_date': '2026-06-25', 'page_number': 1}]"
+    },
+    {
+      "name": "scanned document OCR",
+      "passed": true,
+      "detail": "chars=181"
+    },
+    {
+      "name": "handwritten note OCR (best effort)",
+      "passed": true,
+      "detail": "chars=1705"
+    },
+    {
+      "name": "layout preservation for PDFs",
+      "passed": true,
+      "detail": "prescription_blocks=3, lab_blocks=2"
+    },
+    {
+      "name": "vector + hybrid search",
+      "passed": true,
+      "detail": "results=1"
+    },
+    {
+      "name": "grounded medical QA response",
+      "passed": true,
+      "detail": "model=qwen3.5:4b"
+    },
+    {
+      "name": "QA citations/evidence linking",
+      "passed": true,
+      "detail": "citations=1"
+    },
+    {
+      "name": "summaries generation",
+      "passed": true,
+      "detail": "citations=0"
+    },
+    {
+      "name": "timeline generation",
+      "passed": true,
+      "detail": "events=47"
+    },
+    {
+      "name": "doctor report generation",
+      "passed": true,
+      "detail": "report_id=4a99226da0014312bc359342b4dc2ece"
+    },
+    {
+      "name": "report export",
+      "passed": true,
+      "detail": "format=markdown"
+    },
+    {
+      "name": "educational-only disclaimer endpoint",
+      "passed": true,
+      "detail": "Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, pres"
+    },
+    {
+      "name": "educational-only disclaimer in QA answer",
+      "passed": true,
+      "detail": "Extracted Information From Uploaded Documents:\nCity Care Medical Center Prescription Patient Name: Ahmad Khan Patient ID: MRN-88421 Age: 34 Sex: Male Visit Date: 2026-06-21 Doctor:"
+    },
+    {
+      "name": "safety envelope enforced",
+      "passed": true,
+      "detail": "{\"qa\": {\"disclaimer\": \"Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.\", \"educational_use_only\": true, \"prohibited_actions\": [\"No diagnosis\", \"No treatment recommendation\", \"No medication prescribing\", \"Not a substitute for licensed clinicians\"]}, \"summary\": {\"disclaimer\": \"Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.\", \"educational_use_only\": true, \"prohibited_actions\": [\"No diagnosis\", \"No treatment recommendation\", \"No medication prescribing\", \"Not a substitute for licensed clinicians\"]}, \"report\": {\"disclaimer\": \"Educational use only. This assistant organizes and explains uploaded documents, but does not diagnose conditions, recommend treatments, prescribe medication, or replace licensed healthcare professionals.\", \"educational_use_only\": true, \"prohibited_actions\": [\"No diagnosis\", \"No treatment recommendation\", \"No medication prescribing\", \"Not a substitute for licensed clinicians\"]}}"
+    },
+    {
+      "name": "frontend usability/routes",
+      "passed": true,
+      "detail": "{\"/\": {\"status_code\": 200, \"contains_title\": true}, \"/upload-center\": {\"status_code\": 200, \"contains_title\": true}, \"/medical-documents\": {\"status_code\": 200, \"contains_title\": true}, \"/ai-chat\": {\"status_code\": 200, \"contains_title\": true}, \"/ocr-viewer\": {\"status_code\": 200, \"contains_title\": true}, \"/timeline\": {\"status_code\": 200, \"contains_title\": true}, \"/medication-history\": {\"status_code\": 200, \"contains_title\": true}, \"/laboratory-results\": {\"status_code\": 200, \"contains_title\": true}, \"/reports\": {\"status_code\": 200, \"contains_title\": true}, \"/search\": {\"status_code\": 200, \"contains_title\": true}, \"/memory\": {\"status_code\": 200, \"contains_title\": true}, \"/agent-activity\": {\"status_code\": 200, \"contains_title\": true}, \"/settings\": {\"status_code\": 200, \"contains_title\": true}, \"/model-manager\": {\"status_code\": 200, \"contains_title\": true}, \"/system-monitoring\": {\"status_code\": 200, \"contains_title\": true}}"
+    },
+    {
+      "name": "database persistence",
+      "passed": true,
+      "detail": "{\"documents\": 4, \"ocr_pages\": 4, \"entities\": 79, \"labs\": 6, \"medications\": 17, \"timeline_events\": 47, \"chunks\": 5, \"embeddings_non_null\": 5}"
+    },
+    {
+      "name": "vector store persistence",
+      "passed": true,
+      "detail": "{\"documents\": 4, \"ocr_pages\": 4, \"entities\": 79, \"labs\": 6, \"medications\": 17, \"timeline_events\": 47, \"chunks\": 5, \"embeddings_non_null\": 5}"
+    }
+  ],
+  "summary": {
+    "total": 32,
+    "passed": 32,
+    "failed": 0,
+    "status": "pass"
+  }
+}

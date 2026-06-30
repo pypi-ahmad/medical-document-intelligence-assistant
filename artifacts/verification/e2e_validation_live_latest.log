@@ -1,0 +1,72 @@
+======================================================================
+E2E VALIDATION MATRIX
+======================================================================
+
+[Preflight] Health & config checks
+  ✅ Health endpoint: PASS  — status=200
+  ✅ Config endpoint returns engines: PASS  — engines=['auto', 'paddleocr', 'glmocr', 'docling']
+  ✅ Config PaddleOCR flag is off: PASS  — flag={'paddleocr': False, 'glm_ocr': False}
+  ✅ Parsers endpoint excludes internal PyMuPDF: PASS  — ids=['glmocr', 'paddleocr', 'docling']
+  ✅ Parsers endpoint lists paddleocr: PASS  — ids=['glmocr', 'paddleocr', 'docling']
+  ✅ PaddleOCR reports enabled=false (flag off): PASS  — entry={'id': 'paddleocr', 'name': 'PaddleOCR 2.x (local image OCR)', 'enabled': False, 'available': False}
+  ✅ LLM providers listed: PASS  — ids=['openai', 'gemini', 'anthropic']
+  ✅ All LLM providers report missing_api_key: PASS  — states={'openai': 'missing_api_key', 'gemini': 'missing_api_key', 'anthropic': 'missing_api_key'}
+
+[Fixtures] Upload docs & create schema
+  ✅ Upload PDF: PASS  — doc_id=d471b39d1f694578be31c4ddb0824ede
+  ✅ Upload PNG: PASS  — doc_id=c1da3bdf0156421bae1f58a6dd6a1288
+  ✅ Create schema: PASS  — schema_id=ba23a074b0584925b5675435f2b2165d
+
+[1] PDF text extraction — Auto parser → PyMuPDF, explicit openai LLM
+  ✅ Auto resolves to pymupdf for PDF: PASS  — status=failed, ocr_used=pymupdf, error=[openai] OpenAI API key is not configured.
+  ✅ Fails at LLM stage (OCR succeeded): PASS  — error=[openai] OpenAI API key is not configured.
+
+[2] Image OCR — PaddleOCR disabled, Auto should fail gracefully
+  ✅ Auto rejects PNG when no OCR engine enabled: PASS  — status=failed, error=[auto] No enabled local OCR engine can safely process 'png' files. Auto will not fall back to the PDF-only PyMuPDF parse
+  ✅ Error explains no OCR for images: PASS  — error=[auto] No enabled local OCR engine can safely process 'png' files. Auto will not fall back to the PDF-only PyMuPDF parse
+
+[3] Explicit PaddleOCR when feature flag is off
+  ✅ Disabled PaddleOCR request fails: PASS  — status=failed, error=[paddleocr] Engine 'paddleocr' is disabled by configuration. Set ENABLE_PADDLEOCR=true in .env to enable it.
+  ✅ Error mentions disabled/configuration: PASS  — error=[paddleocr] Engine 'paddleocr' is disabled by configuration. Set ENABLE_PADDLEOCR=true in .env to enable it.
+
+[4] Non-enum parser value 'pymupdf' — should be rejected 422
+  ✅ Non-enum parser value rejected by validation (422): PASS  — http_status=422, error={"detail":[{"type":"enum","loc":["body","ocr_provider"],"msg":"Input should be 'auto', 'paddleocr', 'glmocr' or 'docling
+
+[5] LLM Provider Auto — all keys missing
+  ✅ Auto LLM fails with clear error: PASS  — status=failed, error=No LLM provider is ready. Set at least one provider API key and install the required client packages.
+  ✅ Error message mentions key/provider/configure: PASS  — error=No LLM provider is ready. Set at least one provider API key and install the required client packages.
+
+[6] Explicit OpenAI, no API key
+  ✅ OpenAI without key fails: PASS  — status=failed, error=[openai] OpenAI API key is not configured.
+  ✅ Error mentions API key: PASS  — error=[openai] OpenAI API key is not configured.
+
+[7] Explicit Gemini, no API key
+  ✅ Gemini without key fails: PASS  — status=failed, error=[gemini] Gemini API key is not configured.
+
+[8] Explicit Anthropic, no API key
+  ✅ Anthropic without key fails: PASS  — status=failed, error=[anthropic] Anthropic API key is not configured.
+
+[9] Invalid model ID 'gpt-nonexistent-99'
+  ✅ Invalid model selection fails: PASS  — status=failed, error=[openai] OpenAI API key is not configured.
+
+[10] Unknown parser engine ID sent as raw string
+  ✅ Unknown parser ID rejected (422): PASS  — http_status=422
+
+[11] Unknown LLM provider ID
+  ✅ Unknown LLM provider rejected (422): PASS  — http_status=422
+
+[12] Retry a failed extraction
+  ✅ Retry endpoint accepts failed job: PASS  — status_code=202
+  ✅ Retried job resets to queued: PASS  — status=queued
+  ✅ Retried job reaches terminal state: PASS  — status=failed
+  ✅ Retry rejects non-failed job (409): PASS  — status_code=409, body={"detail":"Only failed extractions can be retried (current: queued)"}
+
+[13] List extractions
+  ✅ List extractions returns array: PASS  — count=33
+  ✅ Multiple extraction jobs recorded: PASS  — count=33
+
+======================================================================
+SUMMARY
+======================================================================
+  Total: 33  |  Passed: 33  |  Failed: 0
+======================================================================

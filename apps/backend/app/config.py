@@ -1,0 +1,205 @@
+"""Application configuration via pydantic-settings."""
+
+from pathlib import Path
+from typing import Annotated
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+from app.models.enums import LLMProviderID
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
+
+    # ── LLM API keys (optional — only needed for the provider in use) ──
+    openai_api_key: str = ""
+    gemini_api_key: str = ""
+    anthropic_api_key: str = ""
+    default_llm_provider: LLMProviderID = LLMProviderID.AUTO
+
+    # ── Database ──
+    database_url: str = "postgresql+asyncpg://mdia:mdia@localhost:5432/mdia"
+    sync_database_url: str = "postgresql+psycopg://mdia:mdia@localhost:5432/mdia"
+
+    # ── File / artifact storage ──
+    upload_dir: Annotated[str, Field(description="Directory for uploaded files")] = "./uploads"
+    artifacts_dir: Annotated[str, Field(description="Directory for extraction artifacts")] = (
+        "./artifacts"
+    )
+    max_upload_size_mb: int = 50
+
+    # ── OCR engine feature flags ──
+    # Each flag enables/disables the corresponding parser in the UI.
+    enable_paddleocr: bool = False
+    enable_glm_ocr: bool = False
+    enable_docling: bool = False
+    """When true, the Docling parser is registered and shown in the
+    OCR provider list. Docling is heavier than PaddleOCR / GLM-OCR
+    (it ships its own ML models) but produces structured Markdown
+    out of the box, which downstream extractors can parse more
+    reliably than free-form OCR text."""
+    # v0.5.0 — multi-modal evidence-grounded pipeline
+    enable_layout_parsing: bool = True
+    """When true (default in v0.5.0), the parse node uses the layout
+    provider to emit per-region metadata (bbox, region_type, reading
+    order) on top of flat text. Disable to fall back to the v0.4.0
+    OCR-only path."""
+    enable_verifier: bool = True
+    """When true, the graph runs the verifier node between
+    validation and finalization. The verifier checks the LLM's
+    output against the evidence map and the document text; any
+    disagreement routes the disputed field to human review."""
+    enable_double_pass: bool = True
+    """When true, the reflect node runs the extractor twice with
+    different seeds and forces an explanation of any diff. v0.4.0
+    behaviour (single pass) is preserved when this is false."""
+    enable_cross_page_entities: bool = True
+    """When true, the graph runs the cross-page entity resolver
+    to merge mentions of the same entity across pages."""
+    # Local Ollama endpoint used by the GLM-OCR provider.
+    ollama_base_url: str = "http://localhost:11434"
+    ollama_glm_ocr_model: str = "glm-ocr:latest"
+    glm_ocr_timeout_seconds: float = 120.0
+    # Grace period (seconds) given to in-flight jobs to finish on shutdown.
+    job_shutdown_grace_seconds: float = 30.0
+    # Maximum number of concurrent in-process jobs.
+    job_max_concurrent: int = 8
+    # Optional Redis URL. When set, the Arq-backed job queue is used
+    # instead of the in-process queue.
+    redis_url: str = ""
+
+    # ── Agentic pipeline tuning ──
+    confidence_threshold: float = 0.6
+    """Fields below this confidence score are flagged for review (0.0-1.0)."""
+    confidence_calibration_path: str = "./calibration.json"
+    """Path to a per-field isotonic calibration artifact. Set to '' to disable."""
+    llm_max_retries: int = 2
+    """Maximum retry attempts for transient LLM errors (rate limits, 5xx)."""
+    llm_retry_base_delay: float = 1.0
+    """Base delay in seconds for exponential backoff between retries."""
+    max_reflection_attempts: int = 2
+    """Maximum times the pipeline re-extracts after a validation failure.
+    Set to 0 to disable the reflection loop entirely."""
+    checkpoint_db_path: str = "./checkpoints.db"
+    """SQLite path for LangGraph graph checkpoints. Set to '' to disable
+    checkpointing (the pipeline will still run, but resume-after-interrupt
+    will not survive a process restart)."""
+
+    # ── OpenTelemetry ──
+    otel_exporter_otlp_endpoint: str = ""
+    """OTLP gRPC endpoint for trace export (e.g. http://phoenix:4317).
+    Empty string disables telemetry."""
+    otel_exporter_insecure: bool = True
+    """Use insecure (h2c) OTLP. Disable in production behind TLS."""
+    otel_service_name: str = "agentic-document-extraction"
+    otel_service_version: str = "0.4.0"
+    otel_deployment_environment: str = "dev"
+
+    # ── VLM-as-extractor ──
+    enable_vlm_extract: bool = False
+    """Set to True to expose the VLM-as-extractor path. The default
+    route still uses the OCR + LLM pipeline; this flag only opens
+    the VLM endpoint for clients that opt in."""
+    vlm_default_model: str = "ollama"
+    """Which VLM backend to use. ``ollama`` (default; points at the
+    local Ollama endpoint) or ``paddleocr-vl`` (when the
+    ``paddleocr-vl>=1.6`` package is installed)."""
+    vlm_ollama_model: str = "glm-ocr:latest"
+    """Ollama model used as the VLM when ``vlm_default_model == 'ollama'``."""
+    vlm_timeout_seconds: float = 120.0
+    vlm_max_tokens: int = 2048
+
+    # ── G-Eval LLM-as-judge ──
+    judge_enabled: bool = True
+    """Set to False to skip the G-Eval sampling and judge calls entirely."""
+    judge_sample_rate: float = 0.05
+    """Fraction of completed extractions to send to the judge (0.0-1.0)."""
+    judge_ollama_model: str = "qwen3.5:4b"
+    """Ollama model used as the G-Eval judge. 4B is the floor for reliable
+    G-Eval CoT scoring; 9B is the recommended opt-in for the strictest
+    grading."""
+    judge_ollama_base_url: str = ""  # falls back to settings.ollama_base_url
+    judge_ollama_timeout_seconds: float = 60.0
+    judge_min_overall_score: float = 3.5
+    """Extractions whose judge overall score falls below this are
+    flagged in the audit log (does not change the user-visible status)."""
+    judge_version: str = "geval-1"
+
+    # ── Server ──
+    host: str = "0.0.0.0"
+    port: int = 8000
+    debug: bool = False
+
+    # ── CORS ──
+    cors_origins: str = "http://localhost:3000,http://127.0.0.1:3000"
+
+    # ── Auth / security ──
+    enable_auth: bool = True
+    jwt_secret_key: str = "change-me-in-env"
+    jwt_algorithm: str = "HS256"
+    access_token_expire_minutes: int = 30
+    refresh_token_expire_days: int = 14
+    password_min_length: int = 12
+    storage_encryption_key: str = ""
+    rate_limit_per_minute: int = 60
+    secure_upload_max_files: int = 20
+
+    # ── Local-first medical assistant policy ──
+    offline_by_default: bool = True
+    allow_external_network: bool = False
+    default_chat_model: str = "qwen3.5:4b"
+    fast_chat_model: str = "qwen3.5:2b"
+    summary_model: str = "phi4-mini:3.8b"
+    entity_model: str = "granite4.1:3b"
+    embedding_model: str = "qwen3-embedding:4b"
+    translation_model: str = "translategemma:4b"
+    fallback_chat_models: str = "qwen3.5:4b,phi4-mini:3.8b,granite4.1:3b,ministral-3:3b"
+    memory_retention_days: int = 30
+    summary_default_length: str = "medium"
+    report_export_formats: str = "html,pdf,json,markdown"
+    max_chunks_per_query: int = 12
+    hybrid_keyword_weight: float = 0.45
+    hybrid_semantic_weight: float = 0.55
+    medical_disclaimer: str = (
+        "Educational use only. This assistant organizes and explains uploaded documents, "
+        "but does not diagnose conditions, recommend treatments, prescribe medication, or "
+        "replace licensed healthcare professionals."
+    )
+
+    # ── Helpers ──
+
+    @property
+    def cors_origin_list(self) -> list[str]:
+        return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+
+    @property
+    def upload_path(self) -> Path:
+        p = Path(self.upload_dir)
+        p.mkdir(parents=True, exist_ok=True)
+        return p
+
+    @property
+    def artifacts_path(self) -> Path:
+        p = Path(self.artifacts_dir)
+        p.mkdir(parents=True, exist_ok=True)
+        return p
+
+    @property
+    def max_upload_bytes(self) -> int:
+        return self.max_upload_size_mb * 1024 * 1024
+
+    @property
+    def fallback_chat_model_list(self) -> list[str]:
+        return [model.strip() for model in self.fallback_chat_models.split(",") if model.strip()]
+
+    @property
+    def report_export_format_list(self) -> list[str]:
+        return [fmt.strip().lower() for fmt in self.report_export_formats.split(",") if fmt.strip()]
+
+
+settings = Settings()

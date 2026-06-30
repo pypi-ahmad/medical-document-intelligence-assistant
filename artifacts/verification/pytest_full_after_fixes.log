@@ -1,0 +1,30 @@
+........................................................................ [  8%]
+............s........................................................... [ 17%]
+........................................................................ [ 25%]
+..............................................s......................... [ 34%]
+........................................................................ [ 42%]
+........................................................................ [ 51%]
+........................................................................ [ 59%]
+........................................................................ [ 68%]
+........................................................................ [ 77%]
+........................................................................ [ 85%]
+........................................................................ [ 94%]
+.................................................                        [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/ahmad/AI/medical-document-intelligence-assistant/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+tests/test_auth_toggle.py::test_system_health_without_token_when_auth_disabled
+  /home/ahmad/AI/medical-document-intelligence-assistant/.venv/lib/python3.12/site-packages/passlib/handlers/argon2.py:716: DeprecationWarning: Accessing argon2.__version__ is deprecated and will be removed in a future release. Use importlib.metadata directly to query for argon2-cffi's packaging metadata.
+    _argon2_cffi.__version__, max_version)
+
+tests/test_auth_toggle.py::test_system_health_without_token_when_auth_disabled
+tests/test_medical_agents.py::test_medical_supervisor_runs_required_agent_nodes
+  /home/ahmad/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/asyncio/events.py:88: RuntimeWarning: The executor did not finishing joining its threads within 300 seconds.
+    self._context.run(self._callback, *self._args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+839 passed, 3 skipped, 4 warnings in 626.55s (0:10:26)
+Transient error StatusCode.UNAVAILABLE encountered while exporting traces to phoenix:4317, retrying in 1.03s.
+Failed to export traces to phoenix:4317, error code: StatusCode.UNAVAILABLE

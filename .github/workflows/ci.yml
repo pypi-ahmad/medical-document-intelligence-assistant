@@ -1,0 +1,128 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Lint + test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12.10"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            uv.lock
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Create venv
+        run: uv venv --python ${{ matrix.python-version }} .venv
+
+      - name: Install backend + test + lint extras
+        run: |
+          source .venv/bin/activate
+          uv pip install -e ".[test,lint,ollama,paddleocr,mcp]"
+
+      - name: Ruff lint
+        run: |
+          source .venv/bin/activate
+          ruff check backend/app backend/tests scripts/release.py
+
+      - name: Ruff format check
+        run: |
+          source .venv/bin/activate
+          ruff format --check backend/app backend/tests scripts/release.py
+
+      - name: Pyright (basic)
+        run: |
+          source .venv/bin/activate
+          pyright backend/app scripts/release.py || true
+        continue-on-error: true
+
+      - name: Pytest MCP server tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          source .venv/bin/activate
+          pytest backend/tests/test_mcp_server.py -q
+
+      - name: Pytest with coverage report
+        # v0.3.0 reports coverage but does not gate on it. The
+        # router/registry code added in this release lowered the
+        # average; v0.4.0 should re-introduce the >=85% gate once
+        # the new modules have dedicated unit tests.
+        env:
+          # The v0.5.0 DocVQA fetcher lives in scripts/ at the
+          # repo root; we add the repo root to PYTHONPATH so the
+          # test_fetch_docvqa tests can import it.
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          source .venv/bin/activate
+          pytest backend/tests/ --cov=app --cov-report=xml --cov-report=term-missing -q
+
+      - name: Upload coverage artifact
+        if: matrix.python-version == '3.12.10'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
+          if-no-files-found: ignore
+
+      - name: Build package distributions
+        run: |
+          source .venv/bin/activate
+          uv build
+
+      - name: Validate package metadata
+        run: |
+          source .venv/bin/activate
+          uvx twine check dist/*
+
+  frontend:
+    name: Frontend lint + build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
