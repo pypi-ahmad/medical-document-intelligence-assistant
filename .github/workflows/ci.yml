@@ -46,25 +46,25 @@ jobs:
       - name: Ruff lint
         run: |
           source .venv/bin/activate
-          ruff check backend/app backend/tests scripts/release.py
+          ruff check apps/backend/app apps/backend/tests scripts/release.py
 
       - name: Ruff format check
         run: |
           source .venv/bin/activate
-          ruff format --check backend/app backend/tests scripts/release.py
+          ruff format --check apps/backend/app apps/backend/tests scripts/release.py
 
       - name: Pyright (basic)
         run: |
           source .venv/bin/activate
-          pyright backend/app scripts/release.py || true
+          pyright apps/backend/app scripts/release.py || true
         continue-on-error: true
 
       - name: Pytest MCP server tests
         env:
-          PYTHONPATH: ${{ github.workspace }}
+          PYTHONPATH: ${{ github.workspace }}/apps/backend:${{ github.workspace }}
         run: |
           source .venv/bin/activate
-          pytest backend/tests/test_mcp_server.py -q
+          pytest apps/backend/tests/test_mcp_server.py -q
 
       - name: Pytest with coverage report
         # v0.3.0 reports coverage but does not gate on it. The
@@ -75,10 +75,10 @@ jobs:
           # The v0.5.0 DocVQA fetcher lives in scripts/ at the
           # repo root; we add the repo root to PYTHONPATH so the
           # test_fetch_docvqa tests can import it.
-          PYTHONPATH: ${{ github.workspace }}
+          PYTHONPATH: ${{ github.workspace }}/apps/backend:${{ github.workspace }}
         run: |
           source .venv/bin/activate
-          pytest backend/tests/ --cov=app --cov-report=xml --cov-report=term-missing -q
+          pytest apps/backend/tests/ --cov=app --cov-report=xml --cov-report=term-missing -q
 
       - name: Upload coverage artifact
         if: matrix.python-version == '3.12.10'
@@ -103,7 +103,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend
+        working-directory: apps/frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -113,7 +113,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: apps/frontend/package-lock.json
 
       - name: Install
         run: npm ci
